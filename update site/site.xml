@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/eu.indenica.iret.integration.easy_0.5.0.jar" id="eu.indenica.iret.integration.easy" version="0.5">
+      <category name="iret-bridges"/>
+   </feature>
+   <feature url="features/eu.indenica.iret.integration.easy_0.7.0.jar" id="eu.indenica.iret.integration.easy" version="0.7">
+      <category name="iret-bridges"/>
+   </feature>
+   <feature url="features/IRET_1.1.0.jar" id="IRET" version="1.1">
+      <category name="IRET"/>
+   </feature>
+   <feature url="features/IRET_2.0.0.jar" id="IRET" version="2.0">
+      <category name="IRET"/>
+   </feature>
+   <category-def name="iret-bridges" label="IRET bridges"/>
+   <category-def name="IRET" label="IRET"/>
+</site>

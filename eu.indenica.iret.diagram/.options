@@ -1,0 +1,7 @@
+# Tracing options for the eu.indenica.iret.diagram plug-in
+
+# Common issues
+eu.indenica.iret.diagram/debug=false
+
+# Visual IDs
+eu.indenica.iret.diagram/debug/visualID=false

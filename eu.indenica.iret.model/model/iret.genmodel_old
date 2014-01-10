@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.indenica.iret.model/src"
+    editDirectory="/eu.indenica.iret.edit/src" 
+	modelPluginID="eu.indenica.iret.model" modelName="Iret" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="eu.indenica.iret.edit"
+    editorPluginID="eu.indenica.iret.editor">
+  <foreignModel>iret.ecore</foreignModel>
+  <genPackages prefix="Iret" basePackage="eu.indenica" disposableProviderFactory="true"
+      ecorePackage="iret.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="iret.ecore#//RefType">
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//RefType/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//RefType/OR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="iret.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/addGoal"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/removeGoal"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/addOper"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/removeOper"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/substituteGoal"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/substituteAgent"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/substituteOper"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/relaxGoal"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/performGoal"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/performOper"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/removeEntity"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//ActionType/addEntity"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="iret.ecore#//Multiplicity">
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//Multiplicity/One"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//Multiplicity/AtMostOne"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//Multiplicity/Some"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//Multiplicity/Any"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="iret.ecore#//AttributeType">
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//AttributeType/Int"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//AttributeType/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//AttributeType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="iret.ecore#//AttributeType/Float"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="iret.ecore#//IreneElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//IreneElement/derivedFrom"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iret.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Parameter/variability"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Agent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Agent/operat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Agent/monitors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Agent/controls"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iret.ecore#//Object">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Object/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Object/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Object/isMonitoredBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Object/isControlledBy"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//HumanAgent"/>
+    <genClasses ecoreClass="iret.ecore#//AutomatedAgent"/>
+    <genClasses ecoreClass="iret.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Entity/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Entity/references"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Entity/admittedStates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Entity/isInState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Entity/isInputOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Entity/isOutputOf"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Event">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Event/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Event/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Event/addArguments"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Goal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Goal/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Goal/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Goal/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Goal/id"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//BehaviouralGoal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//BehaviouralGoal/leaf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//BehaviouralGoal/refinedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//BehaviouralGoal/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//BehaviouralGoal/contributesOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//BehaviouralGoal/operationalizedBy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//BehaviouralGoal/formalDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//BehaviouralGoal/soft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//BehaviouralGoal/satisfaction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//BehaviouralGoal/rollback"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//BehaviouralGoal/contributedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//AdaptationGoal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//AdaptationGoal/maxActivations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//AdaptationGoal/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//AdaptationGoal/condition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//AdaptationGoal/help"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//AdaptationGoal/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Action/actionType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Action/actionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Operation/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/domPre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/domPost"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/reqPre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/reqPost"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/trigPre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/in"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/out"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Operation/hasEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Operation/minExecTImes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Operation/maxExecTimes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Operation/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Operation/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="iret.ecore#//LinkNode"/>
+    <genClasses ecoreClass="iret.ecore#//RefinementLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//RefinementLink/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//RefinementLink/refiningGoals"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//RefinementLink/refinedGoal"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//ANDRefinementLink"/>
+    <genClasses ecoreClass="iret.ecore#//ORRefinementLink"/>
+    <genClasses ecoreClass="iret.ecore#//ContributionLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//ContributionLink/weight"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//ContributionLink/contributor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//ContributionLink/destinationGoal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//ContributionLink/id"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Reference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Reference/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Reference/multiplicity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//Reference/type"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//FormalDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//FormalDefinition/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Attribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//PrimitiveAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//PrimitiveAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//EntityAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//EntityAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//Variability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//Variability/description"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//State/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//State/isInt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//State/domInv"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//GoalDiagram">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasRLink"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasBehaviouralGoal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasAdaptationGoal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasEvent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasOper"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasAgent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/hasCLink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//GoalDiagram/readonly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//GoalDiagram/label"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference iret.ecore#//GoalDiagram/isViewOf"/>
+    </genClasses>
+    <genClasses ecoreClass="iret.ecore#//IreneModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//IreneModel/contains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference iret.ecore#//IreneModel/hasView"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference iret.ecore#//IreneModel/easyVariability"/>
+    </genClasses>
+    <nestedGenPackages prefix="Integration" disposableProviderFactory="true" ecorePackage="iret.ecore#//integration">
+      <nestedGenPackages prefix="Easy" disposableProviderFactory="true" ecorePackage="iret.ecore#//integration/easy">
+        <genClasses ecoreClass="iret.ecore#//integration/easy/Variability">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference iret.ecore#//integration/easy/Variability/variables"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference iret.ecore#//integration/easy/Variability/constraints"/>
+        </genClasses>
+        <genClasses ecoreClass="iret.ecore#//integration/easy/Variable">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//integration/easy/Variable/name"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//integration/easy/Variable/type"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//integration/easy/Variable/bindingTime"/>
+        </genClasses>
+        <genClasses ecoreClass="iret.ecore#//integration/easy/Constraint">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute iret.ecore#//integration/easy/Constraint/expression"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

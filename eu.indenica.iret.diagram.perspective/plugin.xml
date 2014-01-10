@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="eu.indenica.iret.diagram.perspective.IretMergePerspective"
+            fixed="true"
+            id="eu.indenica.iret.diagram.perspective.IretMergePerspective"
+            name="IRET Merge Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="eu.indenica.iret.diagram.view.iretcategory"
+            class="eu.indenica.iret.diagram.perspective.MergeViewPart"
+            id="eu.indenica.iret.diagram.perspective.MergeView"
+            name="Merge View"
+            restorable="true">
+      </view>
+      <category
+            id="eu.indenica.iret.diagram.view.iretcategory"
+            name="IRET">
+      </category>
+   </extension>
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="eu.indenica.iret.diagram.perspective.extensionpoints.handlers.TabsHandler">
+         </run>
+      </application>
+   </extension>
+
+</plugin>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: eu.indenica.iret.edit;singleton:=true
+Bundle-Version: 2.0
+Bundle-ClassPath: .
+Bundle-Activator: eu.indenica.iret.provider.IretEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: eu.indenica.iret.provider
+Require-Bundle: org.eclipse.core.runtime,
+ eu.indenica.iret.model;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="eu.indenica.iret.diagram.iretcategory"
+            class="eu.indenica.iret.diagram.wizard.IretNewViewWizard"
+            id="eu.indenica.iret.diagram.part.IretNewViewWizardID"
+            name="New View for an existing IRET model"
+            project="false">
+         <description>
+            The wizard creates a new View for an existing IRET model.
+         </description>
+      </wizard>
+      <wizard
+            category="eu.indenica.iret.diagram.iretcategory"
+            class="eu.indenica.iret.diagram.wizard.IretMergeWizard"
+            finalPerspective="eu.indenica.iret.diagram.perspective.IretMergePerspective"
+            id="eu.indenica.iret.diagram.wizard.IretMergeWizardID"
+            name="Merge Models"
+            project="false">
+         <description>
+            New wizard for merging models
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

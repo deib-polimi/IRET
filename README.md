@@ -1,4 +1,6 @@
-IRET - Indenica Requirement Engineering Toolset
+## IRET - Indenica Requirement Engineering Toolset
+
+
 
 IRENE (INDENICA Requirements ElicitatioN mEthod) borrows from KAOS, which is a well-known requirements elicitation framework, and also from some previous work done at Politecnico di Milano, to provide the user with a “complete” solution to elicit the “usual” functional and nonfunctional requirements, but also to state the foreseen adaptation capabilities and also the requirements in terms of the variability that should be embedded in the system-to-be. 
 IRENE offers a set of graphical symbols to let the user state the structure of the requirements, and also some textual annotations to refine and better specify the concepts. As for this last aspect, IRENE can be used in two different ways. Annotations can be added in the form of natural language, to ease the user in his/her work, but also to allow for an incremental specification of requirements, but they can also be stated using formal notations.  A prototype tool called IRET (IRENE Toolset), developed by CEFRIEL, supports all these aspects. IRET is implemented as an Eclipse plugin and fully supports IRENE to allow users easily define complete and coherent requirements models.
